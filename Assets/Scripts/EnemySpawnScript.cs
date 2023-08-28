@@ -22,7 +22,7 @@ public class EnemySpawnScript : MonoBehaviour
     void Update()
     {
 
-        if(maxNum != 3)
+        if(maxNum != 10)
         {
             int randNum = Random.Range(0, 3);
 
