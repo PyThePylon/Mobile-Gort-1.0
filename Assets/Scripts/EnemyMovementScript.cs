@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyMovementScript : MonoBehaviour
 {
@@ -10,14 +11,19 @@ public class EnemyMovementScript : MonoBehaviour
     [Header("PointB Position")]
     public GameObject destination;
 
+    [Header("NavMeshAgent")]
+    private NavMeshAgent eneMesh;
+
+    void Awake()
+    {
+        eneMesh = GetComponent<NavMeshAgent>();
+    }
+
     // Update is called once per frame
     void Update()
     {
-        Vector3 setYPosition = new Vector3(transform.position.x, 0.5f, transform.position.z);
 
-        Vector3 moveTo = Vector3.MoveTowards(setYPosition, destination.transform.position, 5f * Time.deltaTime);
-        transform.position = moveTo;
-  
+        eneMesh.SetDestination(destination.transform.position);
 
     }
 
