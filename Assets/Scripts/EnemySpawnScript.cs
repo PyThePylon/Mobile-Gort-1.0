@@ -29,7 +29,9 @@ public class EnemySpawnScript : MonoBehaviour
             Vector3 spawnPos = spawnNum[randNum].position;
 
             spawnPos.y = 0.5f;
-            Instantiate(enemyModel[0], spawnNum[randNum].transform.position, Quaternion.identity);
+            GameObject spawnEnemy = Instantiate(enemyModel[0], spawnNum[randNum].transform.position, Quaternion.identity);
+            spawnEnemy.name = "EnemyCube";
+
             maxNum++;
         }
     }

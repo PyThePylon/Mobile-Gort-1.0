@@ -4,25 +4,37 @@ using UnityEngine;
 
 public class TowerActions : MonoBehaviour
 {
-    [Header("Tower attack Distance")]
-    public float towerAttackDist = 20f;
-
-    [Header("Enemy Layer")]
-    public LayerMask enemyOverLap;
 
     [Header("Single Target")]
     private GameObject selectedTarget;
 
+    
     void Update()
     {
-
-        //Need to have a physics.raycast for 360 rotation!
-
+        if(selectedTarget == null)
+        {
+            Debug.Log("Name is missing!");
+        }
+        else
+        {
+            Debug.Log(selectedTarget.name);
+        }
     }
 
-    private void OnDrawGizmosSelected()
+    void OnTriggerEnter(Collider other)
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, towerAttackDist);
+        if(selectedTarget == null)
+        {
+            selectedTarget = other.gameObject;
+        }
     }
+
+    void OnTriggerExit(Collider other)
+    {
+        if(selectedTarget != null)
+        {
+            selectedTarget = null;
+        }
+    }
+
 }
