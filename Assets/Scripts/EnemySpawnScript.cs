@@ -22,9 +22,9 @@ public class EnemySpawnScript : MonoBehaviour
     void Update()
     {
 
-        if(maxNum != 10)
+        if(maxNum != 1)
         {
-            int randNum = Random.Range(0, 3);
+            int randNum = Random.Range(0, 1);
 
             Vector3 spawnPos = spawnNum[randNum].position;
 

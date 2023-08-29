@@ -20,6 +20,6 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 playerMove = new Vector3(hInput, 0f, vInput);
 
-        transform.Translate(playerMove * Time.deltaTime);
+        transform.Translate(playerMove * mS * Time.deltaTime);
     }
 }
