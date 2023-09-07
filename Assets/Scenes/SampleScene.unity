@@ -2074,7 +2074,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 480672786}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -84.3, y: 0.5, z: 90.1}
+  m_LocalPosition: {x: -84.7, y: 0.5, z: 90.1}
   m_LocalScale: {x: 30, y: 1, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4333,7 +4333,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 908816757}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -42.1, y: 0.5, z: 83}
+  m_LocalPosition: {x: -42.499992, y: 0.5, z: 83}
   m_LocalScale: {x: 5, y: 1, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9056,7 +9056,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2095068699}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -60.6, y: 0.5, z: 83}
+  m_LocalPosition: {x: -60.999992, y: 0.5, z: 83}
   m_LocalScale: {x: 5, y: 1, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9133,15 +9133,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4857873488421767518, guid: 8b888125f25287c49b34b7d22cd25450, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -56.56
+      value: -56.69
       objectReference: {fileID: 0}
     - target: {fileID: 4857873488421767518, guid: 8b888125f25287c49b34b7d22cd25450, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.91
+      value: 6.01
       objectReference: {fileID: 0}
     - target: {fileID: 4857873488421767518, guid: 8b888125f25287c49b34b7d22cd25450, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -32.38
+      value: -32.32
       objectReference: {fileID: 0}
     - target: {fileID: 4857873488421767518, guid: 8b888125f25287c49b34b7d22cd25450, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9174,10 +9174,6 @@ PrefabInstance:
     - target: {fileID: 4857873488421767522, guid: 8b888125f25287c49b34b7d22cd25450, type: 3}
       propertyPath: m_Name
       value: Tower_Placeholder
-      objectReference: {fileID: 0}
-    - target: {fileID: 5675293270231816988, guid: 8b888125f25287c49b34b7d22cd25450, type: 3}
-      propertyPath: m_Radius
-      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b888125f25287c49b34b7d22cd25450, type: 3}
