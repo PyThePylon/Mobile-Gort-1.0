@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [Header("Player Object")]
-    public GameObject player;
+    [Header("Sensitivity")]
+    float mouseSense = 6f;
 
-    [Header("Offset")]
-    public Vector3 camOffset;
+    [Header("XRotation")]
+    float horizRot = 0f;
 
     void LateUpdate()
     {
 
-        Vector3 camPost = player.transform.position + camOffset;
-        transform.position = camPost;
+        float mouseX = Input.GetAxis("Mouse X");
+        float mouseY = Input.GetAxis("Mouse Y");
 
-        transform.LookAt(player.transform);
+        horizRot -= mouseY * mouseSense;
+        horizRot = Mathf.Clamp(horizRot, -90f, 90f);
+
+        transform.localRotation = Quaternion.Euler(horizRot, 0, 0);
+        transform.parent.rotation *= Quaternion.Euler(0, mouseX * mouseSense, 0);
     }
 }

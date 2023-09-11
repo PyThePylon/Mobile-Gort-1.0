@@ -14,6 +14,8 @@ public class EnemyMovementScript : MonoBehaviour
     [Header("NavMeshAgent")]
     private NavMeshAgent eneMesh;
 
+    public float enemyDetectRange = 15f;
+    public Transform closestTower;
     void Awake()
     {
         eneMesh = GetComponent<NavMeshAgent>();
@@ -22,9 +24,41 @@ public class EnemyMovementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        nearestTower();
 
-        eneMesh.SetDestination(destination.transform.position);
+        if (closestTower == null)
+        {
+            eneMesh.SetDestination(destination.transform.position);
+            return;
+        }
+    }
 
+    void nearestTower()
+    {
+        Debug.Log("RUN!");
+
+        GameObject[] towerInRange = GameObject.FindGameObjectsWithTag("Tower");
+        float closetEnemy = Mathf.Infinity;
+        GameObject closeTarget = null;
+        foreach (GameObject tower in towerInRange)
+        {
+            float enemyDist = Vector3.Distance(transform.position, tower.transform.position);
+            if (enemyDist < closetEnemy)
+            {
+                closetEnemy = enemyDist;
+                closeTarget = tower;
+            }
+        }
+
+        if (closeTarget != null && closetEnemy <= enemyDetectRange)
+        {
+            closestTower = closeTarget.transform;
+            eneMesh.SetDestination(closestTower.transform.position);
+        }
+        else
+        {
+            closestTower = null;
+        }
     }
 
     void OnTriggerEnter(Collider collision)

@@ -22,17 +22,18 @@ public class EnemySpawnScript : MonoBehaviour
     void Update()
     {
 
-        if(maxNum != 1)
+        if(maxNum != 2)
         {
             int randNum = Random.Range(0, 1);
-
             Vector3 spawnPos = spawnNum[randNum].position;
-
-            spawnPos.y = 0.5f;
-            GameObject spawnEnemy = Instantiate(enemyModel[0], spawnNum[randNum].transform.position, Quaternion.identity);
-            spawnEnemy.name = "EnemyCube";
-
-            maxNum++;
+            StartCoroutine(enemySpawnDelay(spawnPos, randNum));
         }
+    }
+
+    IEnumerator enemySpawnDelay(Vector3 spawnPos, int randNum)
+    {
+        maxNum++;
+        yield return new WaitForSeconds(2f);
+        GameObject spawnEnemy = Instantiate(enemyModel[0], spawnNum[randNum].transform.position, Quaternion.identity);
     }
 }

@@ -5,57 +5,51 @@ using UnityEngine;
 public class TowerActions : MonoBehaviour
 {
 
-    [Header("Bullet Variables")]
-    public GameObject towerBullet;
-    public GameObject bulletLoc;
+    public float towerRange = 15f;
 
     [Header("Single Target")]
-    private GameObject selectedTarget;
-    private string targetName;
+    public Transform selectedTarget;
 
-    
     void Update()
     {
-        if(selectedTarget != null)
+        detectedEnemy();
+
+        if (selectedTarget == null)
         {
-            Vector3 targetDirection = selectedTarget.transform.position - bulletLoc.transform.position;
-
-            bulletLoc.transform.LookAt(selectedTarget.transform.position);
-
-            Vector3 frontSpawn = bulletLoc.transform.position + bulletLoc.transform.forward * 3.2f;
-
-            GameObject spawn = Instantiate(towerBullet, frontSpawn, bulletLoc.transform.rotation);
-            spawn.GetComponent<Rigidbody>().velocity += targetDirection.normalized * 10f;
-            Destroy(spawn, 4f);
-            Debug.Log(selectedTarget.name);
+            return;
         }
     }
 
-    IEnumerator fire()
+    void detectedEnemy()
     {
-        yield return new WaitForSeconds(2f);
-
-
-
-
-    }
-
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("EnemyCube"))
+        GameObject[] enemiesInRange = GameObject.FindGameObjectsWithTag("EnemyCube");
+        float closetEnemy = Mathf.Infinity;
+        GameObject closeTarget = null;
+        foreach (GameObject enemy in enemiesInRange)
         {
-            selectedTarget = other.gameObject;
-            targetName = other.gameObject.name;
+            float enemyDist = Vector3.Distance(transform.position, enemy.transform.position);
+            if (enemyDist < closetEnemy)
+            {
+                closetEnemy = enemyDist;
+                closeTarget = enemy;
+            }
         }
-    }
 
-    void OnTriggerExit(Collider other)
-    {
-        if(other.CompareTag("EnemyCube") && other.gameObject.name == targetName)
+        if (closeTarget != null && closetEnemy <= towerRange)
+        {
+            selectedTarget = closeTarget.transform;
+        }
+        else
         {
             selectedTarget = null;
         }
     }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, towerRange);
+    }
+
 
 }
