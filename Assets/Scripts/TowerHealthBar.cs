@@ -9,7 +9,7 @@ public class TowerHealthBar : MonoBehaviour
     public float maxHP = 100;
     public Slider healthBar;
 
-    bool continuousDmg = false;
+    //bool continuousDmg = false;
 
     void Start()
     {

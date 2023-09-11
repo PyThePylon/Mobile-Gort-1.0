@@ -16,9 +16,17 @@ public class EnemyMovementScript : MonoBehaviour
 
     public float enemyDetectRange = 15f;
     public Transform closestTower;
+
+
+    private Transform player;
+    private float chaseRange;
+    public float chasePlayer = 15f;
+    bool grabPlayer = false;
+
     void Awake()
     {
         eneMesh = GetComponent<NavMeshAgent>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
@@ -26,7 +34,9 @@ public class EnemyMovementScript : MonoBehaviour
     {
         nearestTower();
 
-        if (closestTower == null)
+        playerDist();
+
+        if (closestTower == null && !grabPlayer)
         {
             eneMesh.SetDestination(destination.transform.position);
             return;
@@ -35,8 +45,6 @@ public class EnemyMovementScript : MonoBehaviour
 
     void nearestTower()
     {
-        Debug.Log("RUN!");
-
         GameObject[] towerInRange = GameObject.FindGameObjectsWithTag("Tower");
         float closetEnemy = Mathf.Infinity;
         GameObject closeTarget = null;
@@ -59,6 +67,22 @@ public class EnemyMovementScript : MonoBehaviour
         {
             closestTower = null;
         }
+    }
+
+    void playerDist()
+    {
+        chaseRange = Vector3.Distance(player.position, transform.position);
+
+        if(chaseRange <= chasePlayer)
+        {
+            grabPlayer = true;
+            eneMesh.SetDestination(player.transform.position);
+        }
+        else
+        {
+            grabPlayer = false;
+        }
+
     }
 
     void OnTriggerEnter(Collider collision)
