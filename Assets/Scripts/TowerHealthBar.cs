@@ -9,7 +9,7 @@ public class TowerHealthBar : MonoBehaviour
     public float maxHP = 100;
     public Slider healthBar;
 
-    //bool continuousDmg = false;
+    bool continuousDmg = false;
 
     void Start()
     {
@@ -22,8 +22,8 @@ public class TowerHealthBar : MonoBehaviour
     {
         healthBar.value = towerHP;
     }
-    /*
-    void OntriggerEnter(Collider collision)
+    
+    void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "EnemyCube")
         {
@@ -36,7 +36,7 @@ public class TowerHealthBar : MonoBehaviour
         }
     }
 
-    void OntriggerExit(Collider collision)
+    void OnTriggerExit(Collider collision)
     {
         if(collision.gameObject.tag == "EnemyCube")
         {
@@ -60,5 +60,5 @@ public class TowerHealthBar : MonoBehaviour
 
         Destroy(gameObject);
     }
-    */
+    
 }
