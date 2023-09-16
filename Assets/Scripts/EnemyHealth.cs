@@ -19,5 +19,23 @@ public class EnemyHealth : MonoBehaviour
     void Update()
     {
         healthBar.value = enemyHP;
+
+        Poof();
+    }
+
+    void Poof()
+    {
+        if(enemyHP <= 0 )
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Pellet"))
+        {
+            enemyHP -= 10;
+        }
     }
 }

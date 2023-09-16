@@ -21,6 +21,16 @@ public class TowerHealthBar : MonoBehaviour
     void Update()
     {
         healthBar.value = towerHP;
+
+        Boom();
+    }
+
+    void Boom()
+    {
+        if(towerHP <= 0 )
+        {
+            Destroy(gameObject);
+        }
     }
     
     void OnTriggerEnter(Collider collision)

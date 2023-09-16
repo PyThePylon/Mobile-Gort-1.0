@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class InteractionScript : MonoBehaviour
 {
-    [Header("Distance of Interaction")]
-    private float interactionDist = 2f;
 
-    [Header("Tower object")]
-    public GameObject towerHolder;
-    
-    void Update()
+    public GameObject pressE;
+
+
+    void OnTriggerEnter(Collider other)
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if (other.CompareTag("Player"))
         {
-            RaycastHit hit;
-
-            if(Physics.Raycast(transform.position, transform.forward, out hit, interactionDist))
-            {
-                if(hit.collider != null)
-                {
-                    Instantiate(towerHolder, gameObject.transform.position, Quaternion.Euler(0, 0, 0));
-                    Destroy(hit.collider.gameObject);
-                }
-            }
+            Debug.Log("EUGH");
+            pressE.SetActive(true);
         }
     }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("E");
+            pressE.SetActive(false);
+        }
+    }
+
 }
