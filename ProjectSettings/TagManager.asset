@@ -8,6 +8,9 @@ TagManager:
   - Tower
   - Pellet
   - Buildable
+  - Snow
+  - Spikes
+  - Giant_Ball
   layers:
   - Default
   - TransparentFX

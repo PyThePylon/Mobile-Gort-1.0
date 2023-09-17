@@ -36,6 +36,14 @@ public class EnemyHealth : MonoBehaviour
         if (other.gameObject.CompareTag("Pellet"))
         {
             enemyHP -= 10;
+            Destroy(other.gameObject);
+        }else if(other.gameObject.CompareTag("Spikes"))
+        {
+            enemyHP -= 15f;
+        }else if(other.gameObject.CompareTag("Giant_Ball"))
+        {
+            enemyHP -= 5f;
+            Destroy(other.gameObject);
         }
     }
 }
