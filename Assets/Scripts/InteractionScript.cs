@@ -1,12 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class InteractionScript : MonoBehaviour
 {
-
+    [Header("Towers")]
     public GameObject pressE;
-
+    public GameObject towers;
 
     void OnTriggerEnter(Collider other)
     {
@@ -14,6 +13,7 @@ public class InteractionScript : MonoBehaviour
         {
             Debug.Log("EUGH");
             pressE.SetActive(true);
+            towers.SetActive(true);
         }
     }
 
@@ -23,6 +23,7 @@ public class InteractionScript : MonoBehaviour
         {
             Debug.Log("E");
             pressE.SetActive(false);
+            towers.SetActive(false);
         }
     }
 

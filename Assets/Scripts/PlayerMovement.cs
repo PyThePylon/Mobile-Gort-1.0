@@ -7,11 +7,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Speed")]
     public float mS = 15f;
 
-    void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
+    public  GameObject grabObj;
+    public  Vector3 pos;
 
     // Update is called once per frame
     void Update()
@@ -22,5 +19,15 @@ public class PlayerMovement : MonoBehaviour
         Vector3 playerMove = new Vector3(hInput, 0f, vInput);
 
         transform.Translate(playerMove * mS * Time.deltaTime);
+    }
+
+    void OnTriggerEnter(Collider collision)
+    {
+        if(collision.gameObject.tag == "Buildable")
+        {
+            grabObj = collision.gameObject;
+            pos = collision.gameObject.transform.position;
+            Debug.Log("name is: " + grabObj.name + " " + grabObj.transform.position);
+        }
     }
 }

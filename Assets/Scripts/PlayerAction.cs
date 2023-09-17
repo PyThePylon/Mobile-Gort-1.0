@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerAction : MonoBehaviour
 {
+    public GameObject grabCanvas;
+
     [Header("Player Fire")]
     public GameObject pellet;
     public Transform fireLoc;
@@ -20,11 +22,14 @@ public class PlayerAction : MonoBehaviour
 
     void Fire()
     {
-        GameObject newPel = Instantiate(pellet, fireLoc.position, pellet.transform.rotation);
+        if (!grabCanvas.activeSelf)
+        {
+            GameObject newPel = Instantiate(pellet, fireLoc.position, pellet.transform.rotation);
 
-        Rigidbody pelRB = newPel.GetComponent<Rigidbody>();
-        pelRB.AddForce(fireLoc.forward * bulletSpeed, ForceMode.Impulse);
+            Rigidbody pelRB = newPel.GetComponent<Rigidbody>();
+            pelRB.AddForce(fireLoc.forward * bulletSpeed, ForceMode.Impulse);
 
-        Destroy(newPel, 4f);
+            Destroy(newPel, 4f);
+        }
     }
 }

@@ -7,6 +7,7 @@ TagManager:
   - EnemyCube
   - Tower
   - Pellet
+  - Buildable
   layers:
   - Default
   - TransparentFX
