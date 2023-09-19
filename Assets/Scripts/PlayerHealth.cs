@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -26,6 +27,21 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         healthBar.value = playerHP;
+
+        if(playerHP == 0)
+        {
+            SceneManager.LoadScene(2);
+        }
+    }
+
+    public void restart()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void mainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
     /*
@@ -38,7 +54,7 @@ public class PlayerHealth : MonoBehaviour
     }
     */
 
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision other)
     {
         if(other.gameObject.tag == "EnemyCube")
         {

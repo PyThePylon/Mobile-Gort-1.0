@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour
     public float enemyHP;
     public float maxHP = 100;
     public Slider healthBar;
+    public AudioSource enemyDefeat;
 
     void Start()
     {
@@ -27,6 +28,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if(enemyHP <= 0 )
         {
+            enemyDefeat.Play();
             Destroy(gameObject);
         }
     }

@@ -37,7 +37,7 @@ public class SnowAction : MonoBehaviour
     
     void OnParticleCollision(GameObject other)
     {
-        Debug.Log("SLOWED!");
+        //Debug.Log("SLOWED!");
         if (eH != null)
         {
             eH.enemyHP -= .20f;

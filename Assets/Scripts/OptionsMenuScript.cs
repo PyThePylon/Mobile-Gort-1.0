@@ -7,10 +7,11 @@ using UnityEngine.UI;
 public class OptionsMenuScript : MonoBehaviour
 {
     public AudioMixer audioMixer;
+    public Slider sliderval;
 
-    public void SetVolume(float volume)
+
+    public void SetVolume()
     {
-        audioMixer.SetFloat("Volume", volume);
+        audioMixer.SetFloat("MasterVolume", sliderval.value);
     }
-
 }

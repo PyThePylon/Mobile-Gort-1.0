@@ -10,13 +10,37 @@ public class PlayerAction : MonoBehaviour
     public GameObject pellet;
     public Transform fireLoc;
     public float bulletSpeed;
+    public AudioSource firePellet;
+
+    [Header("JoyStick")]
+    public FixedJoystick jStick;
+
+
 
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.touchCount > 0)
         {
-            Fire();
+            if (jStick.Horizontal == 0 || jStick.Vertical == 0)
+            {
+                Touch fir = Input.GetTouch(0);
+                if (fir.phase == TouchPhase.Began)
+                {
+                    firePellet.Play();
+                    Fire();
+                }
+            }
+        }
+        
+        if (Input.touchCount >= 2)
+        {
+            Touch sec = Input.touches[1];
+            if (sec.phase == TouchPhase.Began)
+            {
+                firePellet.Play();
+                Fire();
+            }
         }
     }
 

@@ -11,6 +11,8 @@ TagManager:
   - Snow
   - Spikes
   - Giant_Ball
+  - SFX
+  - Music
   layers:
   - Default
   - TransparentFX

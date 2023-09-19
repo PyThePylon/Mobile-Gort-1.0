@@ -249,19 +249,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 684902620}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1114879414}
   - {fileID: 1996705549}
   m_Father: {fileID: 1425749388}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 32}
+  m_AnchoredPosition: {x: 305, y: 214}
   m_SizeDelta: {x: 199.6814, y: 21.187195}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &684902622
@@ -1010,6 +1010,7 @@ MonoBehaviour:
   pellet: {fileID: 7295330013318604064, guid: 286c5111bd0b00d4bb17b577cec7026d, type: 3}
   fireLoc: {fileID: 1300536146}
   bulletSpeed: 10
+  firePellet: {fileID: 0}
 --- !u!1 &3756727283337630334
 GameObject:
   m_ObjectHideFlags: 0

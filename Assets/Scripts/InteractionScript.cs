@@ -6,6 +6,8 @@ public class InteractionScript : MonoBehaviour
     [Header("Towers")]
     public GameObject pressE;
     public GameObject towers;
+    public GameObject visualCube;
+    public bool isBuiltOn;
 
     void OnTriggerEnter(Collider other)
     {
@@ -16,7 +18,6 @@ public class InteractionScript : MonoBehaviour
             towers.SetActive(true);
         }
     }
-
     void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))

@@ -33,7 +33,7 @@ public class TowerHealthBar : MonoBehaviour
         }
     }
     
-    void OnTriggerEnter(Collider collision)
+    void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "EnemyCube")
         {
@@ -46,7 +46,7 @@ public class TowerHealthBar : MonoBehaviour
         }
     }
 
-    void OnTriggerExit(Collider collision)
+    void OnCollisionExit(Collision collision)
     {
         if(collision.gameObject.tag == "EnemyCube")
         {

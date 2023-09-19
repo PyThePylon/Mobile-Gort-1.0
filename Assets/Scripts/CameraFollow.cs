@@ -20,24 +20,16 @@ public class CameraFollow : MonoBehaviour
 
         if (!grabCanvas.activeSelf)
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            //Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.visible = false;
 
-            float mouseX = Input.GetAxis("Mouse X");
-            float mouseY = Input.GetAxis("Mouse Y");
+            //float mouseX = Input.GetAxis("Mouse X");
 
-            horizRot -= mouseY * mouseSense;
-            horizRot = Mathf.Clamp(horizRot, -90f, 90f);
+            //horizRot -= mouseX * mouseSense;
+            //horizRot = Mathf.Clamp(horizRot, -90f, 90f);
 
-            transform.localRotation = Quaternion.Euler(horizRot, 0, 0);
-            transform.parent.rotation *= Quaternion.Euler(0, mouseX * mouseSense, 0);
-        }
-        else
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-
-            Debug.Log("DONT ROTATE CAM!");
+            //transform.localRotation = Quaternion.Euler(horizRot, 0, 0);
+            //transform.rotation *= Quaternion.Euler(0, horizRot, 0);
         }
     }
 }

@@ -23,6 +23,7 @@ public class EnemyMovementScript : MonoBehaviour
     public float chasePlayer = 15f;
     bool grabPlayer = false;
 
+
     void Awake()
     {
         eneMesh = GetComponent<NavMeshAgent>();
@@ -36,8 +37,10 @@ public class EnemyMovementScript : MonoBehaviour
 
         playerDist();
 
+
         if (closestTower == null && !grabPlayer)
         {
+
             eneMesh.SetDestination(destination.transform.position);
             return;
         }
@@ -89,6 +92,7 @@ public class EnemyMovementScript : MonoBehaviour
     {
         if(collision.gameObject.name == "BaseColTest")
         {
+
             Destroy(gameObject);
         }
     }
