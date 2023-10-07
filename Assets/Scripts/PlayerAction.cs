@@ -13,7 +13,7 @@ public class PlayerAction : MonoBehaviour
     public AudioSource firePellet;
 
     [Header("JoyStick")]
-    public FixedJoystick jStick;
+    public FixedJoystick jStickMovement;
 
 
 
@@ -22,7 +22,7 @@ public class PlayerAction : MonoBehaviour
     {
         if (Input.touchCount > 0)
         {
-            if (jStick.Horizontal == 0 || jStick.Vertical == 0)
+            if (jStickMovement.Horizontal == 0 || jStickMovement.Vertical == 0)
             {
                 Touch fir = Input.GetTouch(0);
                 if (fir.phase == TouchPhase.Began)

@@ -422,6 +422,7 @@ GameObject:
   - component: {fileID: 536486328653866704}
   - component: {fileID: 70722805325955391}
   - component: {fileID: 70722805325955390}
+  - component: {fileID: 1581149269}
   m_Layer: 0
   m_Name: Basic_Tower
   m_TagString: Tower
@@ -455,7 +456,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 881064873834069098}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a10df5ad53a7361468dd93ad14e026b1, type: 3}
   m_Name: 
@@ -478,6 +479,19 @@ MonoBehaviour:
   towerHP: 0
   maxHP: 100
   healthBar: {fileID: 70722805373545162}
+--- !u!65 &1581149269
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881064873834069098}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.2, y: 5, z: 3.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2824613929412257334
 GameObject:
   m_ObjectHideFlags: 0

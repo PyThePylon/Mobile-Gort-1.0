@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -16,15 +15,19 @@ public class SnowAction : MonoBehaviour
     void Start()
     {
 
-        GameObject grabEH = GameObject.FindWithTag("EnemyCube");
+        GameObject[] grabEH = GameObject.FindGameObjectsWithTag("EnemyCube");
+        
         if (grabEH == null)
         {
             Debug.Log("Cannot grab the script!");
         }
         else
         {
-            eH = grabEH.GetComponent<EnemyHealth>();
-            enemyNMA = grabEH.GetComponent<NavMeshAgent>();
+            foreach (GameObject enemy in grabEH)
+            {
+                eH = enemy.GetComponent<EnemyHealth>();
+                enemyNMA = enemy.GetComponent<NavMeshAgent>();
+            }
             originalSpeed = enemyNMA.speed;
         }
     }
@@ -64,6 +67,10 @@ public class SnowAction : MonoBehaviour
             else
             {
                 slowT = 0;
+                while (slowT > 0)
+                {
+                    enemyNMA.speed += (originalSpeed - enemyNMA.speed) * Time.deltaTime;
+                }
                 slowed = false;
                 enemyNMA.speed = originalSpeed;
             }

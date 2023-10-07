@@ -7,12 +7,13 @@ public class CameraFollow : MonoBehaviour
 
     public GameObject grabCanvas;
 
+    /*
     [Header("Sensitivity")]
     float mouseSense = 6f;
 
     [Header("XRotation")]
     float horizRot = 0f;
-
+    */
 
     void LateUpdate()
     {

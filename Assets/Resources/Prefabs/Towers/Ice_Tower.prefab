@@ -8940,6 +8940,7 @@ GameObject:
   - component: {fileID: 7277760048432326278}
   - component: {fileID: 3619010044218546813}
   - component: {fileID: 3008279806909176678}
+  - component: {fileID: 558854663}
   m_Layer: 0
   m_Name: Ice_Tower
   m_TagString: Tower
@@ -9114,6 +9115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerRange: 15
   selectedTarget: {fileID: 0}
+  firePos: {fileID: 0}
 --- !u!114 &3008279806909176678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9129,6 +9131,19 @@ MonoBehaviour:
   towerHP: 0
   maxHP: 100
   healthBar: {fileID: 2852306915777034056}
+--- !u!65 &558854663
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7277760048432326330}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7, y: 5, z: 2.7}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7297035591734125209
 GameObject:
   m_ObjectHideFlags: 0

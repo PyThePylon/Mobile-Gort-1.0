@@ -11,6 +11,7 @@ public class ReplaceSpace : MonoBehaviour
 
     void Start()
     {
+
         isBuiltOn = false;
         GameObject grabPM = GameObject.FindWithTag("Player");
         if(grabPM == null)
@@ -25,9 +26,12 @@ public class ReplaceSpace : MonoBehaviour
 
     public void Name()
     {
-        string name = gameObject.name;
-
-        createTower(name);
+        if (!isBuiltOn)
+        {
+            string name = gameObject.name;
+            createTower(name);
+            isBuiltOn = true;
+        }
     }
 
     void createTower(string name)

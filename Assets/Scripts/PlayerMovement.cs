@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Speed")]
+    [Header("Player Movement")]
     public float mS = 15f;
+    public float rS = 90f;
 
 
     public  GameObject grabObj;
@@ -14,7 +13,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody playerRB;
 
     [Header("JoyStick")]
-    public FixedJoystick jStick;
+    public FixedJoystick jStickMovement;
+    public FixedJoystick jStickRotation;
 
     void Start()
     {
@@ -22,21 +22,22 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        float vInput = jStickMovement.Vertical;
 
-        //joyStickControl = true;
-        playerRB.velocity = new Vector3(jStick.Horizontal * 5f, GetComponent<Rigidbody>().velocity.y, jStick.Vertical * 5f);
+        Vector3 playerMove = transform.forward * vInput;
 
-        if (jStick.Horizontal != 0 || jStick.Vertical != 0)
-        {
-            float angle = Mathf.Atan2(jStick.Horizontal, jStick.Vertical) * Mathf.Rad2Deg;
+        Vector3 moveP = playerMove * mS;
 
-            Quaternion targetRotation = Quaternion.Euler(0f, angle, 0f);
+        playerRB.velocity = moveP;
 
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
-        }
-        
+        float hInput = jStickRotation.Horizontal;
+
+        float rotation = hInput * rS * Time.fixedDeltaTime;
+
+        transform.Rotate(Vector3.up * rotation);
+
     }
 
 

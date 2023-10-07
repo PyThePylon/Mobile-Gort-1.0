@@ -512,6 +512,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017ebf8a599afd149a22951503c11104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enteredPlayerArea: 0
+  enteredTowerArea: 0
   gortTypes: {fileID: 1634397055109500739}
   destination: {fileID: 3577545097846532086, guid: ab807548e16eb1347aa25362731728fe, type: 3}
   enemyDetectRange: 15
@@ -526,7 +528,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1634397055109500739}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.7
   m_Speed: 5
   m_Acceleration: 10
   avoidancePriority: 50

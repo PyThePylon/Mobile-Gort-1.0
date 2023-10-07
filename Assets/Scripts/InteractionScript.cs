@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class InteractionScript : MonoBehaviour
 {
@@ -7,13 +6,11 @@ public class InteractionScript : MonoBehaviour
     public GameObject pressE;
     public GameObject towers;
     public GameObject visualCube;
-    public bool isBuiltOn;
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("EUGH");
             pressE.SetActive(true);
             towers.SetActive(true);
         }
@@ -22,7 +19,6 @@ public class InteractionScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("E");
             pressE.SetActive(false);
             towers.SetActive(false);
         }

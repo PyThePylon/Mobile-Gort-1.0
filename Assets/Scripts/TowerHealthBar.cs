@@ -33,7 +33,7 @@ public class TowerHealthBar : MonoBehaviour
         }
     }
     
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "EnemyCube")
         {
@@ -46,7 +46,7 @@ public class TowerHealthBar : MonoBehaviour
         }
     }
 
-    void OnCollisionExit(Collision collision)
+    void OnTriggerExit(Collider collision)
     {
         if(collision.gameObject.tag == "EnemyCube")
         {
@@ -60,7 +60,7 @@ public class TowerHealthBar : MonoBehaviour
     IEnumerator damageDelay()
     {
         continuousDmg = true;
-        while (towerHP > 0)
+        while (continuousDmg)
         {
             towerHP -= 10;
             yield return new WaitForSeconds(3f);

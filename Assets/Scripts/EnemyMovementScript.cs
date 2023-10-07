@@ -1,10 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyMovementScript : MonoBehaviour
 {
+
+    public bool enteredPlayerArea = false;
+    public bool enteredTowerArea = false;
+
     [Header("Types of Gorts")]
     public GameObject gortTypes;
 
@@ -14,14 +16,16 @@ public class EnemyMovementScript : MonoBehaviour
     [Header("NavMeshAgent")]
     private NavMeshAgent eneMesh;
 
+    [Header("Tower Var")]
     public float enemyDetectRange = 15f;
     public Transform closestTower;
 
-
+    [Header("Player Var")]
     private Transform player;
     private float chaseRange;
     public float chasePlayer = 15f;
     bool grabPlayer = false;
+
 
 
     void Awake()
@@ -33,14 +37,31 @@ public class EnemyMovementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        nearestTower();
 
-        playerDist();
+        if (enteredTowerArea)
+        {
+            eneMesh.SetDestination(transform.position);
+            return;
+        }
+        else
+        {
+            nearestTower();
+        }
 
+        if(enteredPlayerArea)
+        {
+            eneMesh.SetDestination(transform.position);
+            return;
+        }
+        else
+        {
+            playerDist();
+        }
+
+        
 
         if (closestTower == null && !grabPlayer)
         {
-
             eneMesh.SetDestination(destination.transform.position);
             return;
         }
@@ -86,14 +107,5 @@ public class EnemyMovementScript : MonoBehaviour
             grabPlayer = false;
         }
 
-    }
-
-    void OnTriggerEnter(Collider collision)
-    {
-        if(collision.gameObject.name == "BaseColTest")
-        {
-
-            Destroy(gameObject);
-        }
     }
 }

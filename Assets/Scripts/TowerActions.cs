@@ -160,5 +160,21 @@ public class TowerActions : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, towerRange);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "EnemyCube")
+        {
+            other.GetComponent<EnemyMovementScript>().enteredTowerArea = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "EnemyCube")
+        {
+            other.GetComponent<EnemyMovementScript>().enteredTowerArea = false;
+        }
+    }
+
 
 }
