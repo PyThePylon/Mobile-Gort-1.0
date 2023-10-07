@@ -28,7 +28,11 @@ public class SnowAction : MonoBehaviour
                 eH = enemy.GetComponent<EnemyHealth>();
                 enemyNMA = enemy.GetComponent<NavMeshAgent>();
             }
-            originalSpeed = enemyNMA.speed;
+
+            if (eH != null && enemyNMA != null)
+            {
+                originalSpeed = enemyNMA.speed;
+            }
         }
     }
 
@@ -43,8 +47,7 @@ public class SnowAction : MonoBehaviour
         //Debug.Log("SLOWED!");
         if (eH != null)
         {
-            eH.enemyHP -= .20f;
-            slowT = 3;
+            slowT = 5;
             if (slowed == false)
             {
                 slowed = true;
@@ -59,7 +62,13 @@ public class SnowAction : MonoBehaviour
         if (eH != null)
         {
             eH.enemyHP -= .20f;
-            enemyNMA.speed *= .5f;
+            enemyNMA.speed *= .02f;
+
+            if(enemyNMA.speed < 1.5f)
+            {
+                enemyNMA.speed = 1.5f;
+            }
+
             if (slowT > .5f)
             {
                 StartCoroutine(snowTimer());
