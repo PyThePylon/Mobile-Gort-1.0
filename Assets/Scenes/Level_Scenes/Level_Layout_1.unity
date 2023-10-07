@@ -11793,7 +11793,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7277760048432326330, guid: 4133b535cc78707458a2d8dde56e6d8f, type: 3}
       propertyPath: m_Name
-      value: Ice_Tower
+      value: Ice_Tower(Clone)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4133b535cc78707458a2d8dde56e6d8f, type: 3}
@@ -12782,7 +12782,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3577545097846532042, guid: ab807548e16eb1347aa25362731728fe, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3577545097846532042, guid: ab807548e16eb1347aa25362731728fe, type: 3}
       propertyPath: m_LocalPosition.x
