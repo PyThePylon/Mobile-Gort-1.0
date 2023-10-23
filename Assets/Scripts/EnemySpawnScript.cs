@@ -11,50 +11,39 @@ public class EnemySpawnScript : MonoBehaviour
     [Header("EnemyModels")]
     public GameObject[] enemyModel;
 
-    int maxNum;
-    Wave_Test wT;
+    int maxNum = 0;
+    public bool spawning = false;
 
-    void Start()
+
+    public void spawningEnemies()
     {
-        maxNum = 0;
-        GameObject grabWT = GameObject.FindWithTag("Player");
-        if (grabWT == null)
-        {
-            Debug.Log("Cannot grab the script!");
-        }
-        else
-        {
-            Debug.Log("script!");
-            wT = grabWT.GetComponent<Wave_Test>();
-        }
+        spawning = true;
+        StartCoroutine(enemySpawn());
     }
 
-    // Update is called once per frame
-    void Update()
+    public void endSpawning()
     {
+        spawning = false;
+        maxNum = 0;
+        StopAllCoroutines();
+    }
 
-        if(maxNum != 2 && wT.waveActive)
+    IEnumerator enemySpawn()
+    {
+        while (spawning)
         {
-            int randNum = Random.Range(0, 1);
-            Vector3 spawnPos = spawnNum[randNum].position;
-            StartCoroutine(enemySpawnDelay(spawnPos, randNum));
-        }
-        else
-        {
-            if (!wT.waveActive)
+            if (maxNum < 2)
             {
-                maxNum = 0;
+                int randNum = Random.Range(0, 1);
+                Vector3 spawnPos = spawnNum[randNum].position;
+                GameObject spawnEnemy = Instantiate(enemyModel[0], spawnNum[0].transform.position, Quaternion.identity);
+                maxNum++;
+                yield return new WaitForSeconds(Random.Range(1f, 2f));
+            }
+            else
+            {
+                yield return null;
             }
         }
     }
-
-    IEnumerator enemySpawnDelay(Vector3 spawnPos, int randNum)
-    {
-        maxNum++;
-        yield return new WaitForSeconds(2f);
-        GameObject spawnEnemy = Instantiate(enemyModel[0], spawnNum[0].transform.position, Quaternion.identity);
-    }
-
-
-
 }

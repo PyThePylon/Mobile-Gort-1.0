@@ -18,6 +18,9 @@ public class Wave_Test : MonoBehaviour
     public Slider waveTSlider;
     public bool waveActive = true;
 
+    [Header("EnemySpawnScript")]
+    public EnemySpawnScript eSS;
+
     void Start()
     {
         waveCounter = 1;
@@ -35,32 +38,29 @@ public class Wave_Test : MonoBehaviour
             if (waveTimer > 0)
             {
                 waveTimer -= Time.deltaTime;
-
                 waveTSlider.value = waveTimer;
 
+                if (!eSS.spawning)
+                {
+                    eSS.spawningEnemies();
+                }
             }
             else
             {
                 waveCounter += 1;
                 waveActive = false;
+                eSS.endSpawning();
+                StartCoroutine(resetTimer());
             }
         }
-        else
-        {
-            StartCoroutine(resetTimer());
-            
-        }
-
 
     }
-
 
     IEnumerator resetTimer()
     {
         yield return new WaitForSeconds(2f);
         waveTimer = maxTimer;
         waveActive = true;
-
         WaveCounterUpdate();
     }
 

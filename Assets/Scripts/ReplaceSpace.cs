@@ -41,17 +41,17 @@ public class ReplaceSpace : MonoBehaviour
         switch (name)
         {
             case "Tower_1":
-                GameObject t_1 = Resources.Load("Prefabs/Towers/Basic_Tower") as GameObject;
+                GameObject t_1 = Resources.Load("Prefabs/Towers/Colored Towers/Basic_Tower") as GameObject;
                 t_1 = Instantiate(t_1, upVec, Quaternion.identity);
                 
                 break;
             case "Tower_2":
-                GameObject t_2 = Resources.Load("Prefabs/Towers/Ice_Tower") as GameObject;
+                GameObject t_2 = Resources.Load("Prefabs/Towers/Colored Towers/Ice_Tower") as GameObject;
                 t_2 = Instantiate(t_2, upVec, Quaternion.identity);
 
                 break;
             case "Tower_3":
-                GameObject t_3 = Resources.Load("Prefabs/Towers/Plant_Tower") as GameObject;
+                GameObject t_3 = Resources.Load("Prefabs/Towers/Colored Towers/Plant_Tower") as GameObject;
                 t_3 = Instantiate(t_3, upVec, Quaternion.identity);
 
                 break;

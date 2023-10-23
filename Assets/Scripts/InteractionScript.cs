@@ -3,7 +3,7 @@ using UnityEngine;
 public class InteractionScript : MonoBehaviour
 {
     [Header("Towers")]
-    public GameObject pressE;
+    //public GameObject pressE;
     public GameObject towers;
     public GameObject visualCube;
 
@@ -11,7 +11,7 @@ public class InteractionScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            pressE.SetActive(true);
+            //pressE.SetActive(true);
             towers.SetActive(true);
         }
     }
@@ -19,7 +19,7 @@ public class InteractionScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            pressE.SetActive(false);
+            //pressE.SetActive(false);
             towers.SetActive(false);
         }
     }
