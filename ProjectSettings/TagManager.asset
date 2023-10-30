@@ -13,6 +13,7 @@ TagManager:
   - Giant_Ball
   - SFX
   - Music
+  - invisWall
   layers:
   - Default
   - TransparentFX

@@ -16,9 +16,13 @@ public class PlayerMovement : MonoBehaviour
     public FixedJoystick jStickMovement;
     public FixedJoystick jStickRotation;
 
+    private Vector3 prevPos;
+    private Vector3 currPos;
+
     void Start()
     {
         playerRB = GetComponent<Rigidbody>();
+        prevPos = transform.position;
     }
 
     // Update is called once per frame
@@ -27,6 +31,18 @@ public class PlayerMovement : MonoBehaviour
         float vInput = jStickMovement.Vertical;
 
         Vector3 playerMove = transform.forward * vInput;
+
+        currPos = transform.position;
+
+        RaycastHit h;
+        if(Physics.Raycast(transform.position, playerMove, out h, playerMove.magnitude *1.5f))
+        {
+            if(h.collider.gameObject.tag == "invisWall")
+            {
+                transform.position = prevPos;
+                return;
+            }
+        }
 
         Vector3 moveP = playerMove * mS;
 
@@ -38,8 +54,9 @@ public class PlayerMovement : MonoBehaviour
 
         transform.Rotate(Vector3.up * rotation);
 
-    }
+        prevPos = currPos;
 
+    }
 
 
     void OnTriggerEnter(Collider collision)
@@ -50,5 +67,12 @@ public class PlayerMovement : MonoBehaviour
             pos = collision.gameObject.transform.position;
             Debug.Log("name is: " + grabObj.name + " " + grabObj.transform.position);
         }
+
+        if(collision.gameObject.tag == "invisWall")
+        {
+            Debug.Log("Hello!");
+
+        }
     }
+
 }
