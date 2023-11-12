@@ -6,6 +6,11 @@ using UnityEngine.UI;
 
 public class Wave_Test : MonoBehaviour
 {
+    //Every 5 Waves:
+    //Increment EnemyID counter
+    //Use EnemyID counter to reference list
+    //
+
     //Use wave number increment to spawn 2+ enemies
     [Header("Wave Counter")]
     public TextMeshProUGUI waveTxt;
@@ -45,13 +50,21 @@ public class Wave_Test : MonoBehaviour
                     eSS.spawningEnemies();
                 }
             }
+
             else
             {
                 waveCounter += 1;
                 waveActive = false;
                 eSS.endSpawning();
                 StartCoroutine(resetTimer());
+
+                if (waveCounter % 5 == 0)
+                {
+                    eSS.IncrementEnemyID();
+                }
             }
+
+
         }
 
     }
