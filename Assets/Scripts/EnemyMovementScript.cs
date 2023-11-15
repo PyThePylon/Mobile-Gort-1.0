@@ -32,6 +32,7 @@ public class EnemyMovementScript : MonoBehaviour
     {
         eneMesh = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+
     }
 
     // Update is called once per frame
@@ -56,6 +57,7 @@ public class EnemyMovementScript : MonoBehaviour
         else
         {
             playerDist();
+
         }
 
         

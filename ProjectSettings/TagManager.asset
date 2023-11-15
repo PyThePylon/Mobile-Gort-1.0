@@ -14,6 +14,7 @@ TagManager:
   - SFX
   - Music
   - invisWall
+  - PlayerBase
   layers:
   - Default
   - TransparentFX
