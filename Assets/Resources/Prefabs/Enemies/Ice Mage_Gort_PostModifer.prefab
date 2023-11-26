@@ -620,6 +620,7 @@ GameObject:
   - component: {fileID: 7057410027645886301}
   - component: {fileID: -7301908405840554147}
   - component: {fileID: 2106519930}
+  - component: {fileID: 1636028720}
   m_Layer: 0
   m_Name: Ice Mage_Gort_PostModifer
   m_TagString: EnemyGort
@@ -770,6 +771,19 @@ MonoBehaviour:
   iceSpellPrefab: {fileID: 161766660727748596, guid: 05ce920d629922a4eb4795ef7494ce5c, type: 3}
   abilityDamage: 10
   castingRange: 30
+--- !u!135 &1636028720
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129373068246775119}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5
+  m_Center: {x: 0, y: 2.5, z: 0}
 --- !u!1 &1628790275178308949
 GameObject:
   m_ObjectHideFlags: 0

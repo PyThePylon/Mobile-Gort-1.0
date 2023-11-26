@@ -4379,8 +4379,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 861871db4d9297341845454b91c18954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towers: {fileID: 0}
-  visualCube: {fileID: 0}
   isBuiltOn: 0
 --- !u!1 &444632818
 GameObject:
@@ -12788,8 +12786,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 861871db4d9297341845454b91c18954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towers: {fileID: 0}
-  visualCube: {fileID: 0}
   isBuiltOn: 0
 --- !u!1 &1298927335
 GameObject:
@@ -20260,8 +20256,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 861871db4d9297341845454b91c18954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towers: {fileID: 0}
-  visualCube: {fileID: 0}
   isBuiltOn: 0
 --- !u!23 &28163407470660281
 MeshRenderer:
@@ -27016,7 +27010,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3756727281982077464, guid: 36bb36c9e4625fa4a8be43cb2dae7cbc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 69.1
+      value: 50.39
       objectReference: {fileID: 0}
     - target: {fileID: 3756727281982077464, guid: 36bb36c9e4625fa4a8be43cb2dae7cbc, type: 3}
       propertyPath: m_LocalPosition.y

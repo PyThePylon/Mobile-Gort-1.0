@@ -21,7 +21,6 @@ public class TowerHealthBar : MonoBehaviour
 
     void Update()
     {
-
         if(gameObject.name == "BaseColTest" && towerHP == 0)
         {
             SceneManager.LoadScene(2);
@@ -42,6 +41,17 @@ public class TowerHealthBar : MonoBehaviour
     
     void OnTriggerEnter(Collider collision)
     {
+
+        if (collision.gameObject.tag == "snowAOE")
+        {
+            towerHP -= 10f;
+        }
+
+        if(collision.gameObject.tag == "meteorAOE")
+        {
+            towerHP -= 20f;
+        }
+
         if (collision.gameObject.tag == "EnemyGort")
         {
             Debug.Log("Opening!");

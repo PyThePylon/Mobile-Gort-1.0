@@ -942,6 +942,7 @@ GameObject:
   - component: {fileID: -5353444294386248158}
   - component: {fileID: -5608640423107534370}
   - component: {fileID: -328048275058956138}
+  - component: {fileID: 1182487188}
   m_Layer: 0
   m_Name: Shredded_Gort
   m_TagString: EnemyGort
@@ -1092,6 +1093,20 @@ MonoBehaviour:
   meteorAOESpawnRadius: 50
   powerDuration: 5
   powerInterval: 120
+--- !u!136 &1182487188
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7873219792708435296}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 2
+  m_Height: 8
+  m_Direction: 1
+  m_Center: {x: 0, y: 6, z: 0}
 --- !u!1 &8196182772551001032
 GameObject:
   m_ObjectHideFlags: 0

@@ -641,6 +641,7 @@ GameObject:
   - component: {fileID: 919132148483248915}
   - component: {fileID: 919132148483248914}
   - component: {fileID: 306833519}
+  - component: {fileID: 5159565024261776293}
   m_Layer: 0
   m_Name: Plant_Tower
   m_TagString: Tower
@@ -695,7 +696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerHP: 0
-  maxHP: 100
+  maxHP: 150
   healthBar: {fileID: 1268452858}
 --- !u!65 &306833519
 BoxCollider:
@@ -710,3 +711,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.7, y: 5, z: 2.7}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &5159565024261776293
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4139937859952131794}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

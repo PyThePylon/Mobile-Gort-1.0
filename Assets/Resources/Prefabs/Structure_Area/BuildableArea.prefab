@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5756259059555354975}
   m_Layer: 0
   m_Name: BuildableArea
-  m_TagString: Untagged
+  m_TagString: Buildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,7 +59,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6624ed2cc005c884bacab54b3f82a441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pressE: {fileID: 4755591078404370641, guid: a8ccf0ed28ced7e4995b590c0e57c48c, type: 3}
   towers: {fileID: 0}
   visualCube: {fileID: 8321386827673547792, guid: 5821c9f2067f2f746a07e7c19d892b86, type: 3}
 --- !u!1001 &6993862424439132194

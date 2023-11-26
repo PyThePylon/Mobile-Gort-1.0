@@ -3,7 +3,6 @@ using UnityEngine;
 public class InteractionScript : MonoBehaviour
 {
     [Header("Towers")]
-    //public GameObject pressE;
     public GameObject towers;
     public GameObject visualCube;
 

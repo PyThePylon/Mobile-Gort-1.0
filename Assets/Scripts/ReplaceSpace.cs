@@ -3,18 +3,12 @@ using UnityEngine;
 
 public class ReplaceSpace : MonoBehaviour
 {
-
     PlayerMovement pM;
-    public GameObject towers;
-    public GameObject visualCube;
-    public bool isBuiltOn;
 
     void Start()
     {
-
-        isBuiltOn = false;
         GameObject grabPM = GameObject.FindWithTag("Player");
-        if(grabPM == null)
+        if (grabPM == null)
         {
             Debug.Log("Cannot grab the script!");
         }
@@ -26,11 +20,10 @@ public class ReplaceSpace : MonoBehaviour
 
     public void Name()
     {
-        if (!isBuiltOn)
+        if (pM != null && pM.grabObj != null)
         {
             string name = gameObject.name;
             createTower(name);
-            isBuiltOn = true;
         }
     }
 
@@ -38,22 +31,32 @@ public class ReplaceSpace : MonoBehaviour
     {
         Vector3 upVec = new Vector3(pM.grabObj.transform.position.x, 2.3f, pM.grabObj.transform.position.z);
 
+        // Check if there's already a tower at the specified position
+        Collider[] colliders = Physics.OverlapSphere(upVec, 0.1f); // Adjust the radius as needed
+
+        if (colliders.Length > 0)
+        {
+            foreach (var collider in colliders)
+            {
+                if (collider.CompareTag("Tower"))
+                {
+                    // Tower already exists at this position, destroy it
+                    Destroy(collider.gameObject);
+                }
+            }
+        }
+
+        // Continue with tower creation
         switch (name)
         {
             case "Tower_1":
-                GameObject t_1 = Resources.Load("Prefabs/Towers/Colored Towers/Basic_Tower") as GameObject;
-                t_1 = Instantiate(t_1, upVec, Quaternion.identity);
-                
+                Instantiate(Resources.Load("Prefabs/Towers/Colored Towers/Basic_Tower") as GameObject, upVec, Quaternion.identity);
                 break;
             case "Tower_2":
-                GameObject t_2 = Resources.Load("Prefabs/Towers/Colored Towers/Ice_Tower") as GameObject;
-                t_2 = Instantiate(t_2, upVec, Quaternion.identity);
-
+                Instantiate(Resources.Load("Prefabs/Towers/Colored Towers/Ice_Tower") as GameObject, upVec, Quaternion.identity);
                 break;
             case "Tower_3":
-                GameObject t_3 = Resources.Load("Prefabs/Towers/Colored Towers/Plant_Tower") as GameObject;
-                t_3 = Instantiate(t_3, upVec, Quaternion.identity);
-
+                Instantiate(Resources.Load("Prefabs/Towers/Colored Towers/Plant_Tower") as GameObject, upVec, Quaternion.identity);
                 break;
         }
     }
