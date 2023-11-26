@@ -16,7 +16,8 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 1
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'LeftFoot' not found\n"
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -24,14 +25,43 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Scene
+      takeName: Scene
+      internalID: -623603649343465320
+      firstFrame: 1
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []
@@ -42,8 +72,8 @@ ModelImporter:
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
@@ -66,7 +96,7 @@ ModelImporter:
     secondaryUVMinLightmapResolution: 40
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -80,7 +110,117 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: Base_Gort(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Light
+      parentName: Base_Gort(Clone)
+      position: {x: -4.0762453, y: 5.903862, z: -1.005454}
+      rotation: {x: 0.16907562, y: -0.7558804, z: 0.27217126, w: 0.57094747}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: Camera
+      parentName: Base_Gort(Clone)
+      position: {x: -7.3588915, y: 4.958309, z: 6.925791}
+      rotation: {x: 0.21255735, y: 0.90479696, z: -0.08438929, w: -0.35922182}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: L_Arm.001
+      parentName: Base_Gort(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Armature
+      parentName: Base_Gort(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: root
+      parentName: Armature
+      position: {x: -0, y: 0, z: 0.026375055}
+      rotation: {x: 0.7071063, y: -0.00083307474, z: 0.0008329003, w: 0.7071063}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: pelvis
+      parentName: root
+      position: {x: 0.0015865095, y: 1.1034493, z: -3.9124717e-10}
+      rotation: {x: -0, y: -0.000000009604264, z: 0.0015478032, w: 0.9999988}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: thigh.L
+      parentName: pelvis
+      position: {x: 2.3283064e-10, y: 0.36349654, z: -1.63579e-16}
+      rotation: {x: 0.00000033584564, y: -0.00000010772197, z: 0.85237664, w: 0.52292824}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1}
+    - name: leg.L
+      parentName: thigh.L
+      position: {x: 0.000000014901161, y: 0.5511314, z: -7.43554e-15}
+      rotation: {x: 0.00000027752947, y: 0.000000056500667, z: 0.52060306, w: 0.85379887}
+      scale: {x: 0.9999998, y: 0.99999994, z: 1}
+    - name: foot.L
+      parentName: leg.L
+      position: {x: 0.000000020743173, y: 0.80485576, z: 0.0000000012137633}
+      rotation: {x: 0.0647384, y: 0.016251493, z: -0.02179484, w: 0.9975319}
+      scale: {x: 1.0000002, y: 0.9999999, z: 0.99999994}
+    - name: foot.L_end
+      parentName: foot.L
+      position: {x: -0, y: 0.881856, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: body
+      parentName: pelvis
+      position: {x: 2.3283064e-10, y: 0.36349654, z: -1.63579e-16}
+      rotation: {x: -4.917355e-12, y: 0.000000013736996, z: -0.0027258222, w: 0.9999963}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: arm.L
+      parentName: body
+      position: {x: -0.98327243, y: 0.6151614, z: 0.00000023447005}
+      rotation: {x: 0.00000026541875, y: -0.00000010179556, z: 0.7071068, w: 0.7071068}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: hand.L
+      parentName: arm.L
+      position: {x: -0.00000011920929, y: 0.80346704, z: 1.2922996e-13}
+      rotation: {x: -1.4210855e-14, y: -7.1054274e-15, z: 2.7018447e-14, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: hand.L_end
+      parentName: hand.L
+      position: {x: -0, y: 1.1508684, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arm.R
+      parentName: body
+      position: {x: 0.98450637, y: 0.6151614, z: -0.00000023476431}
+      rotation: {x: -0.00000011634234, y: 0.000000046911968, z: -0.7071067, w: 0.7071068}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1}
+    - name: hand.R
+      parentName: arm.R
+      position: {x: 0.000000078231096, y: 0.89004046, z: -1.8540725e-14}
+      rotation: {x: -0.03248264, y: 0.0000000900453, z: -0.0079568, w: 0.99944067}
+      scale: {x: 1.0000005, y: 1.0000006, z: 1}
+    - name: hand.R_end
+      parentName: hand.R
+      position: {x: -0, y: 1.1087235, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: thigh.R
+      parentName: pelvis
+      position: {x: 2.3283064e-10, y: 0.36349654, z: -1.63579e-16}
+      rotation: {x: 0.00000020198569, y: -0.00000006218877, z: 0.8711336, w: -0.49104604}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1}
+    - name: leg.R
+      parentName: thigh.R
+      position: {x: 0.000000059604645, y: 0.52959013, z: -1.4540967e-14}
+      rotation: {x: -0.00000004098167, y: 0.000000020744066, z: -0.4934188, w: 0.86979187}
+      scale: {x: 1.0000002, y: 1.0000005, z: 0.99999994}
+    - name: foot.R
+      parentName: leg.R
+      position: {x: 0.00000002071832, y: 0.824107, z: -0.0000000023474769}
+      rotation: {x: 0.06347854, y: -0.01740888, z: 0.022120716, w: 0.99758613}
+      scale: {x: 1.0000008, y: 1.0000004, z: 1.0000005}
+    - name: foot.R_end
+      parentName: foot.R
+      position: {x: -0, y: 0.8747247, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -89,9 +229,9 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: 
+    rootMotionBoneName: Armature
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1

@@ -14,7 +14,7 @@ public class EnemyHealth : MonoBehaviour
     {
         healthBar.minValue = 0;
         healthBar.maxValue = maxHP;
-        enemyHP = maxHP;
+        enemyHP = 40;
     }
 
     void Update()

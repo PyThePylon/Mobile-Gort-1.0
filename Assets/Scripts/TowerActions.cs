@@ -51,7 +51,7 @@ public class TowerActions : MonoBehaviour
 
     void detectedEnemy()
     {
-        GameObject[] enemiesInRange = GameObject.FindGameObjectsWithTag("EnemyCube");
+        GameObject[] enemiesInRange = GameObject.FindGameObjectsWithTag("EnemyGort");
         float closetEnemy = Mathf.Infinity;
         GameObject closeTarget = null;
         foreach (GameObject enemy in enemiesInRange)

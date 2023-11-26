@@ -15,7 +15,7 @@ public class SnowAction : MonoBehaviour
     void Start()
     {
 
-        GameObject[] grabEH = GameObject.FindGameObjectsWithTag("EnemyCube");
+        GameObject[] grabEH = GameObject.FindGameObjectsWithTag("EnemyGort");
         
         if (grabEH == null)
         {

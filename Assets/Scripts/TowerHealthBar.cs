@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TowerHealthBar : MonoBehaviour
 {
@@ -20,6 +21,12 @@ public class TowerHealthBar : MonoBehaviour
 
     void Update()
     {
+
+        if(gameObject.name == "BaseColTest" && towerHP == 0)
+        {
+            SceneManager.LoadScene(2);
+        }
+
         healthBar.value = towerHP;
 
         Boom();
@@ -35,7 +42,7 @@ public class TowerHealthBar : MonoBehaviour
     
     void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.tag == "EnemyCube")
+        if (collision.gameObject.tag == "EnemyGort")
         {
             Debug.Log("Opening!");
             if (!continuousDmg)
@@ -48,7 +55,7 @@ public class TowerHealthBar : MonoBehaviour
 
     void OnTriggerExit(Collider collision)
     {
-        if(collision.gameObject.tag == "EnemyCube")
+        if(collision.gameObject.tag == "EnemyGort")
         {
             if (continuousDmg)
             {

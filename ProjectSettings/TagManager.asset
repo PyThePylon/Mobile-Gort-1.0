@@ -4,7 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - EnemyCube
   - Tower
   - Pellet
   - Buildable
@@ -15,11 +14,15 @@ TagManager:
   - Music
   - invisWall
   - PlayerBase
+  - EnemyGort
+  - EnemyCube
+  - snowAOE
+  - meteorAOE
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Obstacle
   - Water
   - UI
   - 

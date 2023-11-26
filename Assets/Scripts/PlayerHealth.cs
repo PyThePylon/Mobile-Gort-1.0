@@ -9,6 +9,8 @@ public class PlayerHealth : MonoBehaviour
     public float maxHP = 100;
     public Slider healthBar;
 
+    public GameObject explosionPrefab;
+
     bool continuousDmg = false;
 
     //set the player min and max hp values along with the player HPbar
@@ -58,7 +60,6 @@ public class PlayerHealth : MonoBehaviour
     //enters the trigger area. Also stops the enemy movement as well
     void OnTriggerEnter(Collider other)
     {
-
         if(other.gameObject.tag == "EnemyCube")
         {
             if(other.GetComponent<EnemyMovementScript>() != null)
@@ -71,7 +72,19 @@ public class PlayerHealth : MonoBehaviour
                     StartCoroutine(continueDmg());
                 }
             }
+        }
 
+
+        if(other.gameObject.tag == "snowAOE")
+        {
+            playerHP -= 10f;
+        }
+
+        if(other.gameObject.tag == "meteorAOE")
+        {
+            GameObject exPF = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            playerHP -= .001f;
+            Destroy(exPF, 1);
         }
     }
 

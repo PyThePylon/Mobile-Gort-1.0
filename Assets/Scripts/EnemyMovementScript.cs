@@ -24,7 +24,7 @@ public class EnemyMovementScript : MonoBehaviour
     private Transform player;
     private float chaseRange;
     public float chasePlayer = 15f;
-    bool grabPlayer = false;
+    public bool grabPlayer = false;
 
 
 
@@ -35,7 +35,6 @@ public class EnemyMovementScript : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -95,7 +94,7 @@ public class EnemyMovementScript : MonoBehaviour
         }
     }
 
-    void playerDist()
+    public void playerDist()
     {
         chaseRange = Vector3.Distance(player.position, transform.position);
 
